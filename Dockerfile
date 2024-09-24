@@ -16,7 +16,8 @@ USER runner
 WORKDIR /home/runner
 
 # Download and configure the GitHub runner
-RUN curl -o actions-runner-linux-x64.tar.gz -L https://github.com/actions/runner/releases/download/v2.283.1/actions-runner-linux-x64-2.283.1.tar.gz \
+RUN curl -o actions-runner-linux-x64.tar.gz -L https://github.com/actions/runner/releases/download/v2.391.1/actions-runner-linux-x64-2.391.1.tar.gz \
+    && ( echo "3f6efb7488a183e291fc2c62876e14c9ee732864173734facc85a1bfb1744464 actions-runner-linux-x64.tar.gz" | shasum -a 256 -c )
     && tar xzf ./actions-runner-linux-x64.tar.gz \
     && rm -f ./actions-runner-linux-x64.tar.gz
 
